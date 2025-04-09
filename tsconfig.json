@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist", 
+        // Donde se guardan los archivos .js después de la compilación
+        // Por ejemplo, si tienes "src/index.ts", se compilará a "dist/index.js"
+        "rootDir": "./src", 
+        // Carpeta donde están los archivos fuente (.ts)
+        // Solo va a compilar los archivos que estén dentro de "./src"
+        "lib": ["esnext"], 
+        // Define qué versión de JavaScript va a usar
+        // "esnext" usa las últimas versiones de ECMAScript (ES6 o superior)
+        "target": "ESNext",
+        "moduleResolution": "NodeNext",
+        "module": "NodeNext",
+        "strict": false,
+        // Desactiva las reglas estrictas de TypeScript
+        // Si lo pones en `true`, TypeScript va a ser más exigente con los tipos (no permite los any)
+        "sourceMap": true, 
+        // Habilita los archivos .map para depurar.
+        // Permite ver el código original en el navegador o debugger, aunque esté compilado a JavaScript.
+        "esModuleInterop": true, 
+        // Permite usar módulos de CommonJS con sintaxis de ES Modules.
+        // Por ejemplo, en vez de usar:
+        // const express = require("express");
+        // Puedes usar:
+        // import express from "express";
+        "declaration": true,
+        // Genera archivos .d.ts con definiciones de tipos.
+        // Útil si planeas publicar librerías o trabajar con otros desarrolladores.
+        "experimentalDecorators": true,//Permite usar decoradores, que son una característica experimental en TypeScript. 
+        // Los decoradores son una forma de añadir metadatos o lógica adicional a clases, métodos, propiedades o parámetros, 
+        // muy utilizados en frameworks como Angular o TypeORM.
+        "emitDecoratorMetadata": true //Permite que TypeScript emita metadatos de tipo en tiempo de ejecución al compilar, 
+        // lo cual es necesario para algunas bibliotecas como TypeORM o NestJS.
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["src/**/*.test.ts"]
+}
